@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "workshop-example.fullname" . }}-configmap
+  labels:
+    app: {{ template "workshop-example.name" . }}
+    chart: {{ template "workshop-example.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+data:
+{{ (.Files.Glob "files/*").AsConfig | indent 2 }}

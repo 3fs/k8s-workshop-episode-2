@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: workshop-example
+  labels:
+    app: workshop-app-example
+    name: workshop-app-example
+spec:
+  serviceName: workshop-example-headless
+  replicas: 1
+  selector:
+    matchLabels:
+      name: workshop-app-example
+  template:
+    metadata:
+      annotations: {}
+      labels:
+        name: workshop-app-example
+    spec:
+      containers:
+        - name: workshop-app-example
+          image: "eu.gcr.io/k8s-workshop-2/app:latest"
+          imagePullPolicy: IfNotPresent
+          env: []
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          # livenessProbe: {}
+            # httpGet:
+              # path: /healthy
+              # port: http
+          # readinessProbe:
+            # httpGet:
+              # path: /healthz
+              # port: http
+          # resources:
+            # requests:
+              # cpu: 1m
+              # memory: 4Mi
+            # limits:
+              # cpu: 20m
+              # memory: 16Mi

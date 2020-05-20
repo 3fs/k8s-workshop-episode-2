@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "workshop-example.fullname" . }}-headless
+  labels:
+    app: {{ template "workshop-example.name" . }}
+    chart: {{ template "workshop-example.chart" . }}
+    release: {{ .Release.Name | quote }}
+    heritage: {{ .Release.Service | quote }}
+spec:
+  type: ClusterIP
+  clusterIP: None
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "workshop-example.name" . }}
+    release: {{ .Release.Name | quote }}

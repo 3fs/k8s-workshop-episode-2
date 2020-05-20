@@ -1,0 +1,23 @@
+echo
+echo "Kubernetes dashboard can be accessed at https://dashboard.k8s.3fs.si/#/overview?namespace=${CODE}"
+echo
+echo "Your namespace is ${CODE}. To find login token, use function $(tput bold)login-token$(tput sgr0)."
+echo
+
+
+# Update solutions with $CODE.
+sed -i "s/\$CODE/$CODE/g" /repo/01_basic_objects/solutions/*.yaml /repo/02_volumes/solutions/*.yaml /repo/03_helm/solution/*.yaml
+cp /repo/01_basic_objects/solutions/04_statefulset.yaml  /repo/02_volumes/statefulset.yaml
+
+# Setup git for pulling updates.
+git config --global user.email "$CODE@localhost"
+git config --global user.name "$CODE"
+git config --global pull.rebase true
+git config --global rebase.autoStash true
+
+# Commit $CODE changes.
+cd /repo && git add -A && git commit -q -m "replace \$CODE with $CODE" && cd -
+
+function login-token () {
+         awk '/token:/ {print $2}' ~/.kube/config
+}

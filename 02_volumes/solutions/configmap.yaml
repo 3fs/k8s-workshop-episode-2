@@ -1,0 +1,1429 @@
+apiVersion: v1
+data:
+  github-markdown.css: |
+    @font-face {
+      font-family: octicons-anchor;
+      src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAAAYcAA0AAAAACjQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABMAAAABwAAAAca8vGTk9TLzIAAAFMAAAARAAAAFZG1VHVY21hcAAAAZAAAAA+AAABQgAP9AdjdnQgAAAB0AAAAAQAAAAEACICiGdhc3AAAAHUAAAACAAAAAj//wADZ2x5ZgAAAdwAAADRAAABEKyikaNoZWFkAAACsAAAAC0AAAA2AtXoA2hoZWEAAALgAAAAHAAAACQHngNFaG10eAAAAvwAAAAQAAAAEAwAACJsb2NhAAADDAAAAAoAAAAKALIAVG1heHAAAAMYAAAAHwAAACABEAB2bmFtZQAAAzgAAALBAAAFu3I9x/Nwb3N0AAAF/AAAAB0AAAAvaoFvbwAAAAEAAAAAzBdyYwAAAADP2IQvAAAAAM/bz7t4nGNgZGFgnMDAysDB1Ml0hoGBoR9CM75mMGLkYGBgYmBlZsAKAtJcUxgcPsR8iGF2+O/AEMPsznAYKMwIkgMA5REMOXicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChED+h5j//yEk/3KoSgZGNgYYk4GRCUgwMaACRoZhDwCs7QgGAAAAIgKIAAAAAf//AAJ4nHWMMQrCQBBF/0zWrCCIKUQsTDCL2EXMohYGSSmorScInsRGL2DOYJe0Ntp7BK+gJ1BxF1stZvjz/v8DRghQzEc4kIgKwiAppcA9LtzKLSkdNhKFY3HF4lK69ExKslx7Xa+vPRVS43G98vG1DnkDMIBUgFN0MDXflU8tbaZOUkXUH0+U27RoRpOIyCKjbMCVejwypzJJG4jIwb43rfl6wbwanocrJm9XFYfskuVC5K/TPyczNU7b84CXcbxks1Un6H6tLH9vf2LRnn8Ax7A5WQAAAHicY2BkYGAA4teL1+yI57f5ysDNwgAC529f0kOmWRiYVgEpDgYmEA8AUzEKsQAAAHicY2BkYGB2+O/AEMPCAAJAkpEBFbAAADgKAe0EAAAiAAAAAAQAAAAEAAAAAAAAKgAqACoAiAAAeJxjYGRgYGBhsGFgYgABEMkFhAwM/xn0QAIAD6YBhwB4nI1Ty07cMBS9QwKlQapQW3VXySvEqDCZGbGaHULiIQ1FKgjWMxknMfLEke2A+IJu+wntrt/QbVf9gG75jK577Lg8K1qQPCfnnnt8fX1NRC/pmjrk/zprC+8D7tBy9DHgBXoWfQ44Av8t4Bj4Z8CLtBL9CniJluPXASf0Lm4CXqFX8Q84dOLnMB17N4c7tBo1AS/Qi+hTwBH4rwHHwN8DXqQ30XXAS7QaLwSc0Gn8NuAVWou/gFmnjLrEaEh9GmDdDGgL3B4JsrRPDU2hTOiMSuJUIdKQQayiAth69r6akSSFqIJuA19TrzCIaY8sIoxyrNIrL//pw7A2iMygkX5vDj+G+kuoLdX4GlGK/8Lnlz6/h9MpmoO9rafrz7ILXEHHaAx95s9lsI7AHNMBWEZHULnfAXwG9/ZqdzLI08iuwRloXE8kfhXYAvE23+23DU3t626rbs8/8adv+9DWknsHp3E17oCf+Z48rvEQNZ78paYM38qfk3v/u3l3u3GXN2Dmvmvpf1Srwk3pB/VSsp512bA/GG5i2WJ7wu430yQ5K3nFGiOqgtmSB5pJVSizwaacmUZzZhXLlZTq8qGGFY2YcSkqbth6aW1tRmlaCFs2016m5qn36SbJrqosG4uMV4aP2PHBmB3tjtmgN2izkGQyLWprekbIntJFing32a5rKWCN/SdSoga45EJykyQ7asZvHQ8PTm6cslIpwyeyjbVltNikc2HTR7YKh9LBl9DADC0U/jLcBZDKrMhUBfQBvXRzLtFtjU9eNHKin0x5InTqb8lNpfKv1s1xHzTXRqgKzek/mb7nB8RZTCDhGEX3kK/8Q75AmUM/eLkfA+0Hi908Kx4eNsMgudg5GLdRD7a84npi+YxNr5i5KIbW5izXas7cHXIMAau1OueZhfj+cOcP3P8MNIWLyYOBuxL6DRylJ4cAAAB4nGNgYoAALjDJyIAOWMCiTIxMLDmZedkABtIBygAAAA==) format('woff');
+    }
+
+    body {
+      background-color: white;
+      max-width: 790px;
+      margin: 0 auto;
+      padding: 30px 0;
+    }
+
+    .markdown-body {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      color: #333;
+      overflow: hidden;
+      font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      word-wrap: break-word;
+    }
+
+    .markdown-body a {
+      background: transparent;
+    }
+
+    .markdown-body a:active,
+    .markdown-body a:hover {
+      outline: 0;
+    }
+
+    .markdown-body strong {
+      font-weight: bold;
+    }
+
+    .markdown-body h1 {
+      font-size: 2em;
+      margin: 0.67em 0;
+    }
+
+    .markdown-body img {
+      border: 0;
+    }
+
+    .markdown-body hr {
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      height: 0;
+    }
+
+    .markdown-body pre {
+      overflow: auto;
+    }
+
+    .markdown-body code,
+    .markdown-body kbd,
+    .markdown-body pre {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
+
+    .markdown-body input {
+      color: inherit;
+      font: inherit;
+      margin: 0;
+    }
+
+    .markdown-body html input[disabled] {
+      cursor: default;
+    }
+
+    .markdown-body input {
+      line-height: normal;
+    }
+
+    .markdown-body input[type="checkbox"] {
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 0;
+    }
+
+    .markdown-body table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+
+    .markdown-body td,
+    .markdown-body th {
+      padding: 0;
+    }
+
+    .markdown-body * {
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .markdown-body input {
+      font: 13px/1.4 Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    .markdown-body a {
+      color: #4183c4;
+      text-decoration: none;
+    }
+
+    .markdown-body a:hover,
+    .markdown-body a:focus,
+    .markdown-body a:active {
+      text-decoration: underline;
+    }
+
+    .markdown-body hr {
+      height: 0;
+      margin: 15px 0;
+      overflow: hidden;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .markdown-body hr:before {
+      display: table;
+      content: "";
+    }
+
+    .markdown-body hr:after {
+      display: table;
+      clear: both;
+      content: "";
+    }
+
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4,
+    .markdown-body h5,
+    .markdown-body h6 {
+      margin-top: 15px;
+      margin-bottom: 15px;
+      line-height: 1.1;
+    }
+
+    .markdown-body h1 {
+      font-size: 30px;
+    }
+
+    .markdown-body h2 {
+      font-size: 21px;
+    }
+
+    .markdown-body h3 {
+      font-size: 16px;
+    }
+
+    .markdown-body h4 {
+      font-size: 14px;
+    }
+
+    .markdown-body h5 {
+      font-size: 12px;
+    }
+
+    .markdown-body h6 {
+      font-size: 11px;
+    }
+
+    .markdown-body blockquote {
+      margin: 0;
+    }
+
+    .markdown-body ul,
+    .markdown-body ol {
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .markdown-body ol ol,
+    .markdown-body ul ol {
+      list-style-type: lower-roman;
+    }
+
+    .markdown-body ul ul ol,
+    .markdown-body ul ol ol,
+    .markdown-body ol ul ol,
+    .markdown-body ol ol ol {
+      list-style-type: lower-alpha;
+    }
+
+    .markdown-body dd {
+      margin-left: 0;
+    }
+
+    .markdown-body code {
+      font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    }
+
+    .markdown-body pre {
+      margin-top: 0;
+      margin-bottom: 0;
+      font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    }
+
+    .markdown-body kbd {
+      background-color: #e7e7e7;
+      background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+      background-image: linear-gradient(#fefefe, #e7e7e7);
+      background-repeat: repeat-x;
+      border-radius: 2px;
+      border: 1px solid #cfcfcf;
+      color: #000;
+      padding: 3px 5px;
+      line-height: 10px;
+      font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+      display: inline-block;
+    }
+
+    .markdown-body>*:first-child {
+      margin-top: 0 !important;
+    }
+
+    .markdown-body>*:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .markdown-body .anchor {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      display: block;
+      padding-right: 6px;
+      padding-left: 30px;
+      margin-left: -30px;
+    }
+
+    .markdown-body .anchor:focus {
+      outline: none;
+    }
+
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4,
+    .markdown-body h5,
+    .markdown-body h6 {
+      position: relative;
+      margin-top: 1em;
+      margin-bottom: 16px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    .markdown-body h1 .octicon-link,
+    .markdown-body h2 .octicon-link,
+    .markdown-body h3 .octicon-link,
+    .markdown-body h4 .octicon-link,
+    .markdown-body h5 .octicon-link,
+    .markdown-body h6 .octicon-link {
+      display: none;
+      color: #000;
+      vertical-align: middle;
+    }
+
+    .markdown-body h1:hover .anchor,
+    .markdown-body h2:hover .anchor,
+    .markdown-body h3:hover .anchor,
+    .markdown-body h4:hover .anchor,
+    .markdown-body h5:hover .anchor,
+    .markdown-body h6:hover .anchor {
+      height: 1em;
+      padding-left: 8px;
+      margin-left: -30px;
+      line-height: 1;
+      text-decoration: none;
+    }
+
+    .markdown-body h1:hover .anchor .octicon-link,
+    .markdown-body h2:hover .anchor .octicon-link,
+    .markdown-body h3:hover .anchor .octicon-link,
+    .markdown-body h4:hover .anchor .octicon-link,
+    .markdown-body h5:hover .anchor .octicon-link,
+    .markdown-body h6:hover .anchor .octicon-link {
+      display: inline-block;
+    }
+
+    .markdown-body h1 {
+      padding-bottom: 0.3em;
+      font-size: 2.25em;
+      line-height: 1.2;
+      border-bottom: 1px solid #eee;
+    }
+
+    .markdown-body h2 {
+      padding-bottom: 0.3em;
+      font-size: 1.75em;
+      line-height: 1.225;
+      border-bottom: 1px solid #eee;
+    }
+
+    .markdown-body h3 {
+      font-size: 1.5em;
+      line-height: 1.43;
+    }
+
+    .markdown-body h4 {
+      font-size: 1.25em;
+    }
+
+    .markdown-body h5 {
+      font-size: 1em;
+    }
+
+    .markdown-body h6 {
+      font-size: 1em;
+      color: #777;
+    }
+
+    .markdown-body p,
+    .markdown-body blockquote,
+    .markdown-body ul,
+    .markdown-body ol,
+    .markdown-body dl,
+    .markdown-body table,
+    .markdown-body pre {
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    .markdown-body hr {
+      height: 4px;
+      padding: 0;
+      margin: 16px 0;
+      background-color: #e7e7e7;
+      border: 0 none;
+    }
+
+    .markdown-body ul,
+    .markdown-body ol {
+      padding-left: 2em;
+    }
+
+    .markdown-body ul ul,
+    .markdown-body ul ol,
+    .markdown-body ol ol,
+    .markdown-body ol ul {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .markdown-body li>p {
+      margin-top: 16px;
+    }
+
+    .markdown-body dl {
+      padding: 0;
+    }
+
+    .markdown-body dl dt {
+      padding: 0;
+      margin-top: 16px;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .markdown-body dl dd {
+      padding: 0 16px;
+      margin-bottom: 16px;
+    }
+
+    .markdown-body blockquote {
+      padding: 0 15px;
+      color: #777;
+      border-left: 4px solid #ddd;
+    }
+
+    .markdown-body blockquote>:first-child {
+      margin-top: 0;
+    }
+
+    .markdown-body blockquote>:last-child {
+      margin-bottom: 0;
+    }
+
+    .markdown-body table {
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: normal;
+      word-break: keep-all;
+    }
+
+    .markdown-body table th {
+      font-weight: bold;
+    }
+
+    .markdown-body table th,
+    .markdown-body table td {
+      padding: 6px 13px;
+      border: 1px solid #ddd;
+    }
+
+    .markdown-body table tr {
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+    }
+
+    .markdown-body table tr:nth-child(2n) {
+      background-color: #f8f8f8;
+    }
+
+    .markdown-body img {
+      max-width: 100%;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    .markdown-body code {
+      padding: 0;
+      padding-top: 0.2em;
+      padding-bottom: 0.2em;
+      margin: 0;
+      font-size: 85%;
+      background-color: rgba(0,0,0,0.04);
+      border-radius: 3px;
+    }
+
+    .markdown-body code:before,
+    .markdown-body code:after {
+      letter-spacing: -0.2em;
+      content: "\00a0";
+    }
+
+    .markdown-body pre>code {
+      padding: 0;
+      margin: 0;
+      font-size: 100%;
+      word-break: normal;
+      white-space: pre;
+      background: transparent;
+      border: 0;
+    }
+
+    .markdown-body .highlight {
+      margin-bottom: 16px;
+    }
+
+    .markdown-body .highlight pre,
+    .markdown-body pre {
+      padding: 16px;
+      overflow: auto;
+      font-size: 85%;
+      line-height: 1.45;
+      background-color: #f7f7f7;
+      border-radius: 3px;
+    }
+
+    .markdown-body .highlight pre {
+      margin-bottom: 0;
+      word-break: normal;
+    }
+
+    .markdown-body pre {
+      word-wrap: normal;
+    }
+
+    .markdown-body pre code {
+      display: inline;
+      max-width: initial;
+      padding: 0;
+      margin: 0;
+      overflow: initial;
+      line-height: inherit;
+      word-wrap: normal;
+      background-color: transparent;
+      border: 0;
+    }
+
+    .markdown-body pre code:before,
+    .markdown-body pre code:after {
+      content: normal;
+    }
+
+    .markdown-body .highlight {
+      background: #fff;
+    }
+
+    .markdown-body .highlight .mf,
+    .markdown-body .highlight .mh,
+    .markdown-body .highlight .mi,
+    .markdown-body .highlight .mo,
+    .markdown-body .highlight .il,
+    .markdown-body .highlight .m {
+      color: #945277;
+    }
+
+    .markdown-body .highlight .s,
+    .markdown-body .highlight .sb,
+    .markdown-body .highlight .sc,
+    .markdown-body .highlight .sd,
+    .markdown-body .highlight .s2,
+    .markdown-body .highlight .se,
+    .markdown-body .highlight .sh,
+    .markdown-body .highlight .si,
+    .markdown-body .highlight .sx,
+    .markdown-body .highlight .s1 {
+      color: #df5000;
+    }
+
+    .markdown-body .highlight .kc,
+    .markdown-body .highlight .kd,
+    .markdown-body .highlight .kn,
+    .markdown-body .highlight .kp,
+    .markdown-body .highlight .kr,
+    .markdown-body .highlight .kt,
+    .markdown-body .highlight .k,
+    .markdown-body .highlight .o {
+      font-weight: bold;
+    }
+
+    .markdown-body .highlight .kt {
+      color: #458;
+    }
+
+    .markdown-body .highlight .c,
+    .markdown-body .highlight .cm,
+    .markdown-body .highlight .c1 {
+      color: #998;
+      font-style: italic;
+    }
+
+    .markdown-body .highlight .cp,
+    .markdown-body .highlight .cs {
+      color: #999;
+      font-weight: bold;
+    }
+
+    .markdown-body .highlight .cs {
+      font-style: italic;
+    }
+
+    .markdown-body .highlight .n {
+      color: #333;
+    }
+
+    .markdown-body .highlight .na,
+    .markdown-body .highlight .nv,
+    .markdown-body .highlight .vc,
+    .markdown-body .highlight .vg,
+    .markdown-body .highlight .vi {
+      color: #008080;
+    }
+
+    .markdown-body .highlight .nb {
+      color: #0086B3;
+    }
+
+    .markdown-body .highlight .nc {
+      color: #458;
+      font-weight: bold;
+    }
+
+    .markdown-body .highlight .no {
+      color: #094e99;
+    }
+
+    .markdown-body .highlight .ni {
+      color: #800080;
+    }
+
+    .markdown-body .highlight .ne {
+      color: #990000;
+      font-weight: bold;
+    }
+
+    .markdown-body .highlight .nf {
+      color: #945277;
+      font-weight: bold;
+    }
+
+    .markdown-body .highlight .nn {
+      color: #555;
+    }
+
+    .markdown-body .highlight .nt {
+      color: #000080;
+    }
+
+    .markdown-body .highlight .err {
+      color: #a61717;
+      background-color: #e3d2d2;
+    }
+
+    .markdown-body .highlight .gd {
+      color: #000;
+      background-color: #fdd;
+    }
+
+    .markdown-body .highlight .gd .x {
+      color: #000;
+      background-color: #faa;
+    }
+
+    .markdown-body .highlight .ge {
+      font-style: italic;
+    }
+
+    .markdown-body .highlight .gr {
+      color: #aa0000;
+    }
+
+    .markdown-body .highlight .gh {
+      color: #999;
+    }
+
+    .markdown-body .highlight .gi {
+      color: #000;
+      background-color: #dfd;
+    }
+
+    .markdown-body .highlight .gi .x {
+      color: #000;
+      background-color: #afa;
+    }
+
+    .markdown-body .highlight .go {
+      color: #888;
+    }
+
+    .markdown-body .highlight .gp {
+      color: #555;
+    }
+
+    .markdown-body .highlight .gs {
+      font-weight: bold;
+    }
+
+    .markdown-body .highlight .gu {
+      color: #800080;
+      font-weight: bold;
+    }
+
+    .markdown-body .highlight .gt {
+      color: #aa0000;
+    }
+
+    .markdown-body .highlight .ow {
+      font-weight: bold;
+    }
+
+    .markdown-body .highlight .w {
+      color: #bbb;
+    }
+
+    .markdown-body .highlight .sr {
+      color: #017936;
+    }
+
+    .markdown-body .highlight .ss {
+      color: #8b467f;
+    }
+
+    .markdown-body .highlight .bp {
+      color: #999;
+    }
+
+    .markdown-body .highlight .gc {
+      color: #999;
+      background-color: #EAF2F5;
+    }
+
+    .markdown-body .octicon {
+      font: normal normal 16px octicons-anchor;
+      line-height: 1;
+      display: inline-block;
+      text-decoration: none;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .markdown-body .octicon-link:before {
+      content: '\f05c';
+    }
+
+    .markdown-body .task-list-item {
+      list-style-type: none;
+    }
+
+    .markdown-body .task-list-item+.task-list-item {
+      margin-top: 3px;
+    }
+
+    .markdown-body .task-list-item input {
+      float: left;
+      margin: 0.3em 0 0.25em -1.6em;
+      vertical-align: middle;
+    }
+
+    @media (min-width: 43.75em) {
+      body {
+        padding: 30px;
+      }
+    }
+  hljs-github.min.css: |
+    /*
+
+    github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+    */
+
+    .hljs {
+      display: block;
+      overflow-x: auto;
+      padding: 0.5em;
+      color: #333;
+      background: #f8f8f8;
+      -webkit-text-size-adjust: none;
+    }
+
+    .hljs-comment,
+    .diff .hljs-header,
+    .hljs-javadoc {
+      color: #998;
+      font-style: italic;
+    }
+
+    .hljs-keyword,
+    .css .rule .hljs-keyword,
+    .hljs-winutils,
+    .nginx .hljs-title,
+    .hljs-subst,
+    .hljs-request,
+    .hljs-status {
+      color: #333;
+      font-weight: bold;
+    }
+
+    .hljs-number,
+    .hljs-hexcolor,
+    .ruby .hljs-constant {
+      color: #008080;
+    }
+
+    .hljs-string,
+    .hljs-tag .hljs-value,
+    .hljs-phpdoc,
+    .hljs-dartdoc,
+    .tex .hljs-formula {
+      color: #d14;
+    }
+
+    .hljs-title,
+    .hljs-id,
+    .scss .hljs-preprocessor {
+      color: #900;
+      font-weight: bold;
+    }
+
+    .hljs-list .hljs-keyword,
+    .hljs-subst {
+      font-weight: normal;
+    }
+
+    .hljs-class .hljs-title,
+    .hljs-type,
+    .vhdl .hljs-literal,
+    .tex .hljs-command {
+      color: #458;
+      font-weight: bold;
+    }
+
+    .hljs-tag,
+    .hljs-tag .hljs-title,
+    .hljs-rules .hljs-property,
+    .django .hljs-tag .hljs-keyword {
+      color: #000080;
+      font-weight: normal;
+    }
+
+    .hljs-attribute,
+    .hljs-variable,
+    .lisp .hljs-body {
+      color: #008080;
+    }
+
+    .hljs-regexp {
+      color: #009926;
+    }
+
+    .hljs-symbol,
+    .ruby .hljs-symbol .hljs-string,
+    .lisp .hljs-keyword,
+    .clojure .hljs-keyword,
+    .scheme .hljs-keyword,
+    .tex .hljs-special,
+    .hljs-prompt {
+      color: #990073;
+    }
+
+    .hljs-built_in {
+      color: #0086b3;
+    }
+
+    .hljs-preprocessor,
+    .hljs-pragma,
+    .hljs-pi,
+    .hljs-doctype,
+    .hljs-shebang,
+    .hljs-cdata {
+      color: #999;
+      font-weight: bold;
+    }
+
+    .hljs-deletion {
+      background: #fdd;
+    }
+
+    .hljs-addition {
+      background: #dfd;
+    }
+
+    .diff .hljs-change {
+      background: #0086b3;
+    }
+
+    .hljs-chunk {
+      color: #aaa;
+    }
+  index.html: |
+    <!doctype html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <title>Cheatsheet - Kubectl</title>
+        <link type="text/css" rel="stylesheet" href="./github-markdown.css">
+        <link type="text/css" rel="stylesheet" href="./pilcrow.css">
+        <link type="text/css" rel="stylesheet" href="./hljs-github.min.css"/>
+      </head>
+      <body>
+        <article class="markdown-body"><h1 id="cheatsheet---kubectl"><a class="header-link" href="#cheatsheet---kubectl"></a>Cheatsheet - Kubectl</h1>
+    <p>Kubectl is a command line interface for running commands against Kubernetes clusters.</p>
+    <h2 id="installing"><a class="header-link" href="#installing"></a>Installing</h2>
+    <p>The kubectl version has to be within one minor version difference of the Kubernetes cluster. For example, a v1.2 client should work with v1.1, v1.2, and v1.3 master.</p>
+    <p>Kubectl can be installed on Ubuntu, Debian, CentOS, RedHat operating systems.</p>
+    <h3 id="ubuntu-/-debian"><a class="header-link" href="#ubuntu-/-debian"></a>Ubuntu / Debian</h3>
+    <pre class="hljs"><code>sudo apt-get update &amp;&amp; sudo apt-get install -y apt-transport-https
+    curl <span class="hljs-_">-s</span> https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"deb https://apt.kubernetes.io/ kubernetes-xenial main"</span> | sudo tee <span class="hljs-_">-a</span> /etc/apt/sources.list.d/kubernetes.list
+    sudo apt-get update
+    sudo apt-get install -y kubectl</code></pre><h3 id="centos-/-redhat"><a class="header-link" href="#centos-/-redhat"></a>CentOS / RedHat</h3>
+    <pre class="hljs"><code>cat &lt;&lt;EOF &gt; /etc/yum.repos.d/kubernetes.repo
+    [kubernetes]
+    name=Kubernetes
+    baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+    enabled=1
+    gpgcheck=1
+    repo_gpgcheck=1
+    gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+    EOF
+    yum install -y kubectl</code></pre><p>For further information about kubectl installation method, please refer to <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">the Kubernetes documentation.</a></p>
+    <h2 id="completion"><a class="header-link" href="#completion"></a>Completion</h2>
+    <p>To easy manage the Kubernetes resources thanks to the command line Kubectl, the shell completion can be added to the shell profile to easily navigate in command line.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Installing bash completion on macOS using homebrew</span>
+    <span class="hljs-comment">## If running Bash 3.2 included with macOS</span>
+    brew install bash-completion
+    <span class="hljs-comment">## or, if running Bash 4.1+</span>
+    brew install bash-completion@2
+    <span class="hljs-comment">## If kubectl is installed via homebrew, this should start working immediately.</span>
+    <span class="hljs-comment">## If you've installed via other means, you may need add the completion to your completion directory</span>
+    kubectl completion bash &gt; $(brew --prefix)/etc/bash_completion.d/kubectl
+
+
+    <span class="hljs-comment"># Installing bash completion on Linux</span>
+    <span class="hljs-comment">## Load the kubectl completion code for bash into the current shell</span>
+    <span class="hljs-built_in">source</span> &lt;(kubectl completion bash)
+    <span class="hljs-comment">## Write bash completion code to a file and source if from .bash_profile</span>
+    kubectl completion bash &gt; ~/.kube/completion.bash.inc
+    <span class="hljs-built_in">printf</span> <span class="hljs-string">"
+    # Kubectl shell completion
+    source '<span class="hljs-variable">$HOME</span>/.kube/completion.bash.inc'
+    "</span> &gt;&gt; <span class="hljs-variable">$HOME</span>/.bash_profile
+    <span class="hljs-built_in">source</span> <span class="hljs-variable">$HOME</span>/.bash_profile
+
+    <span class="hljs-comment"># Load the kubectl completion code for zsh[1] into the current shell</span>
+    <span class="hljs-built_in">source</span> &lt;(kubectl completion zsh)
+    <span class="hljs-comment"># Set the kubectl completion code for zsh[1] to autoload on startup</span>
+    kubectl completion zsh &gt; <span class="hljs-string">"<span class="hljs-variable">${fpath[1]}</span>/_kubectl"</span></code></pre><h2 id="syntax"><a class="header-link" href="#syntax"></a>Syntax</h2>
+    <p>Kubectl is a powerful tool to manage each object on a Kubernetes cluster. The command has a simple and unique syntax to manage everything :</p>
+    <pre class="hljs"><code>kubectl [<span class="hljs-built_in">command</span>] [TYPE] [NAME] [flags]</code></pre><ul class="list">
+    <li><em>command</em> : specifies the operation that you want to perform on one or more resources (create, get, describe, delete)</li>
+    <li><em>type</em> : specifies the resource type. Resource types are case-insensitive and you can specify the singular, plural, or abbreviated forms</li>
+    <li><em>name</em> : specifies the name of the resource. Names are case-sensitive. If the name is omitted, details for all resources are displayed</li>
+    <li><em>flags</em> : specifies optional flags.</li>
+    </ul>
+    <h2 id="useful-basic-commands"><a class="header-link" href="#useful-basic-commands"></a>Useful basic commands</h2>
+    <h3 id="create"><a class="header-link" href="#create"></a>Create</h3>
+    <p>Create a resource from a file or from stdin.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Create a pod using the data in pod.json.</span>
+    kubectl create <span class="hljs-_">-f</span> ./pod.json
+
+    <span class="hljs-comment"># Create a pod based on the JSON passed into stdin.</span>
+    cat pod.json | kubectl create <span class="hljs-_">-f</span> -
+
+    <span class="hljs-comment"># Edit the data in docker-registry.yaml in JSON using the v1 API format then create the resource using the edited data.</span>
+    kubectl create <span class="hljs-_">-f</span> docker-registry.yaml --edit --output-version=v1 -o json
+
+    <span class="hljs-comment"># Create all the resources avaibale in the folder </span>
+    kubeclt create <span class="hljs-_">-f</span> &lt;folder_name&gt;</code></pre><h3 id="delete"><a class="header-link" href="#delete"></a>Delete</h3>
+    <p>Delete resources by filenames, stdin, resources and names, or by resources and label selector.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Delete a pod using the type and name specified in pod.json.</span>
+    kubectl delete <span class="hljs-_">-f</span> ./pod.json
+
+    <span class="hljs-comment"># Delete a pod based on the type and name in the JSON passed into stdin.</span>
+    cat pod.json | kubectl delete <span class="hljs-_">-f</span> -
+
+    <span class="hljs-comment"># Delete pods and services with same names "baz" and "foo"</span>
+    kubectl delete pod,service baz foo
+
+    <span class="hljs-comment"># Delete pods and services with label name=myLabel.</span>
+    kubectl delete pods,services <span class="hljs-_">-l</span> name=myLabel
+
+    <span class="hljs-comment"># Delete a pod with minimal delay</span>
+    kubectl delete pod foo --now
+
+    <span class="hljs-comment"># Force delete a pod on a dead node</span>
+    kubectl delete pod foo --grace-period=0 --force
+
+    <span class="hljs-comment"># Delete all pods</span>
+    kubectl delete pods --all
+
+    <span class="hljs-comment">#Delete all resources available in the folder.</span>
+    kubectl delete <span class="hljs-_">-f</span> &lt;folder_name&gt;</code></pre><h3 id="edit"><a class="header-link" href="#edit"></a>Edit</h3>
+    <p>Edit a resource from the default editor.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Edit the service named 'docker-registry':</span>
+    kubectl edit svc/docker-registry
+
+    <span class="hljs-comment"># Use an alternative editor</span>
+    KUBE_EDITOR=<span class="hljs-string">"nano"</span> kubectl edit svc/docker-registry
+
+    <span class="hljs-comment"># Edit the job 'myjob' in JSON using the v1 API format:</span>
+    kubectl edit job.v1.batch/myjob -o json
+
+    <span class="hljs-comment"># Edit the deployment 'mydeployment' in YAML and save the modified config in its annotation:</span>
+    kubectl edit deployment/mydeployment -o yaml --save-config</code></pre><h3 id="expose"><a class="header-link" href="#expose"></a>Expose</h3>
+    <p>Expose a resource as a new Kubernetes service.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Create a service for a replicated nginx, which serves on port 80 and connects to the containers on port 8000.</span>
+    kubectl expose rc nginx --port=80 --target-port=8000
+
+    <span class="hljs-comment"># Create a service for a replication controller identified by type and name specified in "nginx-controller.yaml", which serves on port 80 and connects to the containers on port 8000.</span>
+    kubectl expose <span class="hljs-_">-f</span> nginx-controller.yaml --port=80 --target-port=8000
+
+    <span class="hljs-comment"># Create a service for a pod valid-pod, which serves on port 444 with the name "frontend"</span>
+    kubectl expose pod valid-pod --port=444 --name=frontend
+
+    <span class="hljs-comment"># Create a second service based on the above service, exposing the container port 8443 as port 443 with the name "nginx-https"</span>
+    kubectl expose service nginx --port=443 --target-port=8443 --name=nginx-https
+
+    <span class="hljs-comment"># Create a service for a replicated streaming application on port 4100 balancing UDP traffic and named 'video-stream'.</span>
+    kubectl expose rc streamer --port=4100 --protocol=udp --name=video-stream
+
+    <span class="hljs-comment"># Create a service for a replicated nginx using replica set, which serves on port 80 and connects to the containers on port 8000.</span>
+    kubectl expose rs nginx --port=80 --target-port=8000
+
+    <span class="hljs-comment"># Create a service for an nginx deployment, which serves on port 80 and connects to the containers on port 8000.</span>
+    kubectl expose deployment nginx --port=80 --target-port=8000
+
+    <span class="hljs-comment"># Access Pod without exposing as service using kubectl --raw</span>
+    kubectl get pod &lt;pod_name&gt; -o yaml|grep selfLink
+    kubectl get --raw &lt;selfLink&gt;:port/proxy/&lt;filename&gt;</code></pre><h3 id="get"><a class="header-link" href="#get"></a>Get</h3>
+    <p>Display one or many resources.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># List all pods.</span>
+    kubectl get pods
+
+    <span class="hljs-comment"># List all pods in ps output format with more information (such as node name).</span>
+    kubectl get pods -o wide
+
+    <span class="hljs-comment"># List a single replication controller with specified NAME in ps output format.</span>
+    kubectl get replicationcontroller web
+
+    <span class="hljs-comment"># List a single pod in JSON output format.</span>
+    kubectl get -o json pod &lt;pod-name&gt;
+
+    <span class="hljs-comment"># List a pod identified by type and name specified in "pod.yaml" in JSON output format.</span>
+    kubectl get <span class="hljs-_">-f</span> pod.yaml -o json
+
+    <span class="hljs-comment"># Return only the phase value of the specified pod.</span>
+    kubectl get -o template pod/&lt;pod-name&gt; --template={{.status.phase}}
+
+    <span class="hljs-comment"># List all replication controllers and services together in ps output format.</span>
+    kubectl get rc,services
+
+    <span class="hljs-comment"># List one or more resources by their type and names.</span>
+    kubectl get rc/web service/frontend pods/&lt;pod-name&gt;
+
+    <span class="hljs-comment"># List all resources with different types.</span>
+    kubectl get all</code></pre><h3 id="run"><a class="header-link" href="#run"></a>Run</h3>
+    <p>Create and run a particular image, possibly replicated.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Start a single instance of nginx.</span>
+    kubectl run nginx --image=nginx
+
+    <span class="hljs-comment"># Start a single instance of hazelcast and let the container expose port 5701 .</span>
+    kubectl run hazelcast --image=hazelcast --port=5701
+
+    <span class="hljs-comment"># Start a single instance of hazelcast and set environment variables "DNS_DOMAIN=cluster" and "POD_NAMESPACE=default" in the container.</span>
+    kubectl run hazelcast --image=hazelcast --env=<span class="hljs-string">"DNS_DOMAIN=cluster"</span> --env=<span class="hljs-string">"POD_NAMESPACE=default"</span>
+
+    <span class="hljs-comment"># Start a single instance of hazelcast and set labels "app=hazelcast" and "env=prod" in the container.</span>
+    kubectl run hazelcast --image=nginx --labels=<span class="hljs-string">"app=hazelcast,env=prod"</span>
+
+    <span class="hljs-comment"># Start a replicated instance of nginx.</span>
+    kubectl run nginx --image=nginx --replicas=5
+
+    <span class="hljs-comment"># Dry run. Print the corresponding API objects without creating them.</span>
+    kubectl run nginx --image=nginx --dry-run
+
+    <span class="hljs-comment"># Start a single instance of nginx, but overload the spec of the deployment with a partial set of values parsed from JSON.</span>
+    kubectl run nginx --image=nginx --overrides=<span class="hljs-string">'{ "apiVersion": "v1", "spec": { ... } }'</span>
+
+    <span class="hljs-comment"># Start a pod of busybox and keep it in the foreground, don't restart it if it exits.</span>
+    kubectl run -i -t busybox --image=busybox --restart=Never
+
+    <span class="hljs-comment"># Start the nginx container using the default command, but use custom arguments (arg1 .. argN) for that command.</span>
+    kubectl run nginx --image=nginx -- &lt;arg1&gt; &lt;arg2&gt; ... &lt;argN&gt;
+
+    <span class="hljs-comment"># Start the nginx container using a different command and custom arguments.</span>
+    kubectl run nginx --image=nginx --command -- &lt;cmd&gt; &lt;arg1&gt; ... &lt;argN&gt;
+
+    <span class="hljs-comment"># Start the perl container to compute π to 2000 places and print it out.</span>
+    kubectl run pi --image=perl --restart=OnFailure -- perl -Mbignum=bpi -wle <span class="hljs-string">'print bpi(2000)'</span>
+
+    <span class="hljs-comment"># Start the cron job to compute π to 2000 places and print it out every 5 minutes.</span>
+    kubectl run pi --schedule=<span class="hljs-string">"0/5 * * * ?"</span> --image=perl --restart=OnFailure -- perl -Mbignum=bpi -wle <span class="hljs-string">'print bpi(2000)'</span></code></pre><h3 id="set"><a class="header-link" href="#set"></a>Set</h3>
+    <p>Configure application resources.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Update deployment 'registry' with a new environment variable</span>
+    kubectl <span class="hljs-built_in">set</span> env deployment/registry STORAGE_DIR=/<span class="hljs-built_in">local</span>
+
+    <span class="hljs-comment"># List the environment variables defined on a deployments 'sample-build'</span>
+    kubectl <span class="hljs-built_in">set</span> env deployment/sample-build --list
+
+    <span class="hljs-comment"># List the environment variables defined on all pods</span>
+    kubectl <span class="hljs-built_in">set</span> env pods --all --list
+
+    <span class="hljs-comment"># Output modified deployment in YAML, and does not alter the object on the server</span>
+    kubectl <span class="hljs-built_in">set</span> env deployment/sample-build STORAGE_DIR=/data -o yaml
+
+    <span class="hljs-comment"># Update all containers in all replication controllers in the project to have ENV=prod</span>
+    kubectl <span class="hljs-built_in">set</span> env rc --all ENV=prod
+
+    <span class="hljs-comment"># Import environment from a secret</span>
+    kubectl <span class="hljs-built_in">set</span> env --from=secret/mysecret deployment/myapp
+
+    <span class="hljs-comment"># Import environment from a config map with a prefix</span>
+    kubectl <span class="hljs-built_in">set</span> env --from=configmap/myconfigmap --prefix=MYSQL_ deployment/myapp
+
+    <span class="hljs-comment"># Remove the environment variable ENV from container 'c1' in all deployment configs</span>
+    kubectl <span class="hljs-built_in">set</span> env deployments --all --containers=<span class="hljs-string">"c1"</span> ENV-
+
+    <span class="hljs-comment"># Remove the environment variable ENV from a deployment definition on disk and</span>
+    <span class="hljs-comment"># update the deployment config on the server</span>
+    kubectl <span class="hljs-built_in">set</span> env <span class="hljs-_">-f</span> deploy.json ENV-
+
+    <span class="hljs-comment"># Set some of the local shell environment into a deployment config on the server</span>
+    env | grep RAILS_ | kubectl <span class="hljs-built_in">set</span> env <span class="hljs-_">-e</span> - deployment/registry
+
+    <span class="hljs-comment"># Set a deployment's nginx container image to 'nginx:1.9.1', and its busybox container image to 'busybox'.</span>
+    kubectl <span class="hljs-built_in">set</span> image deployment/nginx busybox=busybox nginx=nginx:1.9.1
+
+    <span class="hljs-comment"># Update all deployments' and rc's nginx container's image to 'nginx:1.9.1'</span>
+    kubectl <span class="hljs-built_in">set</span> image deployments,rc nginx=nginx:1.9.1 --all
+
+    <span class="hljs-comment"># Update image of all containers of daemonset abc to 'nginx:1.9.1'</span>
+    kubectl <span class="hljs-built_in">set</span> image daemonset abc *=nginx:1.9.1
+
+    <span class="hljs-comment"># Print result (in yaml format) of updating nginx container image from local file, without hitting the server</span>
+    kubectl <span class="hljs-built_in">set</span> image <span class="hljs-_">-f</span> path/to/file.yaml nginx=nginx:1.9.1 --local -o yaml
+
+    <span class="hljs-comment"># Set a deployments nginx container cpu limits to "200m" and memory to "512Mi"</span>
+    kubectl <span class="hljs-built_in">set</span> resources deployment nginx -c=nginx --limits=cpu=200m,memory=512Mi
+
+    <span class="hljs-comment"># Set the resource request and limits for all containers in nginx</span>
+    kubectl <span class="hljs-built_in">set</span> resources deployment nginx --limits=cpu=200m,memory=512Mi --requests=cpu=100m,memory=256Mi
+
+    <span class="hljs-comment"># Remove the resource requests for resources on containers in nginx</span>
+    kubectl <span class="hljs-built_in">set</span> resources deployment nginx --limits=cpu=0,memory=0 --requests=cpu=0,memory=0
+
+    <span class="hljs-comment"># Print the result (in yaml format) of updating nginx container limits from a local, without hitting the server</span>
+    kubectl <span class="hljs-built_in">set</span> resources <span class="hljs-_">-f</span> path/to/file.yaml --limits=cpu=200m,memory=512Mi --local -o yaml
+
+    <span class="hljs-comment"># Set Deployment nginx-deployment's ServiceAccount to serviceaccount1</span>
+    kubectl <span class="hljs-built_in">set</span> serviceaccount deployment nginx-deployment serviceaccount1
+
+    <span class="hljs-comment"># Print the result (in yaml format) of updated nginx deployment with serviceaccount from local file, without hitting apiserver</span>
+    kubectl <span class="hljs-built_in">set</span> sa <span class="hljs-_">-f</span> nginx-deployment.yaml serviceaccount1 --local --dry-run -o yaml</code></pre><h2 id="useful-deploy-commands"><a class="header-link" href="#useful-deploy-commands"></a>Useful deploy commands</h2>
+    <h3 id="autoscale"><a class="header-link" href="#autoscale"></a>Autoscale</h3>
+    <p>Creates an autoscaler that automatically chooses and sets the number of pods that run in a kubernetes cluste</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Auto scale a deployment "foo", with the number of pods between 2 and 10, no target CPU utilization specified so a default autoscaling policy will be used:</span>
+    kubectl autoscale deployment foo --min=2 --max=10
+
+    <span class="hljs-comment"># Auto scale a replication controller "foo", with the number of pods between 1 and 5, target CPU utilization at 80%:</span>
+    kubectl autoscale rc foo --max=5 --cpu-percent=80</code></pre><h3 id="rollout"><a class="header-link" href="#rollout"></a>Rollout</h3>
+    <p>Manage the rollout of a resource.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Rollback to the previous deployment</span>
+    kubectl rollout undo deployment/abc
+
+    <span class="hljs-comment"># Check the rollout status of a daemonset</span>
+    kubectl rollout status daemonset/foo
+
+    <span class="hljs-comment"># View the rollout history of a deployment</span>
+    kubectl rollout <span class="hljs-built_in">history</span> deployment/abc
+
+    <span class="hljs-comment"># View the details of daemonset revision 3</span>
+    kubectl rollout <span class="hljs-built_in">history</span> daemonset/abc --revision=3
+
+    <span class="hljs-comment"># Mark the nginx deployment as paused. Any current state of</span>
+    <span class="hljs-comment"># the deployment will continue its function, new updates to the deployment will not</span>
+    <span class="hljs-comment"># have an effect as long as the deployment is paused.</span>
+    kubectl rollout pause deployment/nginx
+
+    <span class="hljs-comment"># Resume an already paused deployment</span>
+    kubectl rollout resume deployment/nginx
+
+    <span class="hljs-comment"># Watch the rollout status of a deployment</span>
+    kubectl rollout status deployment/nginx
+
+    <span class="hljs-comment"># Rollback to the previous deployment</span>
+    kubectl rollout undo deployment/abc
+
+    <span class="hljs-comment"># Rollback to daemonset revision 3</span>
+    kubectl rollout undo daemonset/abc --to-revision=3
+
+    <span class="hljs-comment"># Rollback to the previous deployment with dry-run</span>
+    kubectl rollout undo --dry-run=<span class="hljs-literal">true</span> deployment/abc</code></pre><h3 id="scale"><a class="header-link" href="#scale"></a>Scale</h3>
+    <p>Set a new size for a Deployment, ReplicaSet, Replication Controller, or StatefulSet.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Scale a replicaset named 'foo' to 3.</span>
+    kubectl scale --replicas=3 rs/foo
+
+    <span class="hljs-comment"># Scale a resource identified by type and name specified in "foo.yaml" to 3.</span>
+    kubectl scale --replicas=3 <span class="hljs-_">-f</span> foo.yaml
+
+    <span class="hljs-comment"># If the deployment named mysql's current size is 2, scale mysql to 3.</span>
+    kubectl scale --current-replicas=2 --replicas=3 deployment/mysql
+
+    <span class="hljs-comment"># Scale multiple replication controllers.</span>
+    kubectl scale --replicas=5 rc/foo rc/bar rc/baz
+
+    <span class="hljs-comment"># Scale statefulset named 'web' to 3.</span>
+    kubectl scale --replicas=3 statefulset/web</code></pre><h2 id="useful-cluster-management-commands"><a class="header-link" href="#useful-cluster-management-commands"></a>Useful cluster management commands</h2>
+    <h3 id="cluster-info"><a class="header-link" href="#cluster-info"></a>Cluster-info</h3>
+    <p>Display addresses of the master and services with label kubernetes.io/cluster-service=true To further debug and diagnose
+    cluster problems, use &#39;kubectl cluster-info dump&#39;.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Print the address of the master and cluster services</span>
+    kubectl cluster-info</code></pre><h3 id="cordon-/-uncordon"><a class="header-link" href="#cordon-/-uncordon"></a>Cordon / Uncordon</h3>
+    <p>Mark node as (un)schedulable.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Mark node "foo" as unschedulable.</span>
+    kubectl cordon foo
+
+    <span class="hljs-comment"># Mark node "foo" as schedulable.</span>
+    $ kubectl uncordon foo</code></pre><h3 id="drain"><a class="header-link" href="#drain"></a>Drain</h3>
+    <p>Drain node in preparation for maintenance.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Drain node "foo", even if there are pods not managed by a ReplicationController, ReplicaSet, Job, DaemonSet or StatefulSet on it.</span>
+    $ kubectl drain foo --force
+
+    <span class="hljs-comment"># As above, but abort if there are pods not managed by a ReplicationController, ReplicaSet, Job, DaemonSet or StatefulSet, and use a grace period of 15 minutes.</span>
+    $ kubectl drain foo --grace-period=90
+
+    <span class="hljs-comment">#Drain node by ignoring Deamonsets</span>
+    kubectl drain &lt;node_name&gt; --ignore-daemonsets</code></pre><h3 id="taint"><a class="header-link" href="#taint"></a>Taint</h3>
+    <p>Update the taints on one or more nodes.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Update node 'foo' with a taint with key 'dedicated' and value 'special-user' and effect 'NoSchedule'.</span>
+    <span class="hljs-comment"># If a taint with that key and effect already exists, its value is replaced as specified.</span>
+    kubectl taint nodes foo dedicated=special-user:NoSchedule
+
+    <span class="hljs-comment"># Remove from node 'foo' the taint with key 'dedicated' and effect 'NoSchedule' if one exists.</span>
+    kubectl taint nodes foo dedicated:NoSchedule-
+
+    <span class="hljs-comment"># Remove from node 'foo' all the taints with key 'dedicated'</span>
+    kubectl taint nodes foo dedicated-
+
+    <span class="hljs-comment"># Add a taint with key 'dedicated' on nodes having label mylabel=X</span>
+    kubectl taint node <span class="hljs-_">-l</span> myLabel=X  dedicated=foo:PreferNoSchedule</code></pre><h3 id="top"><a class="header-link" href="#top"></a>Top</h3>
+    <p>Display Resource (CPU/Memory/Storage) usage.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Show metrics for all nodes</span>
+    kubectl top node
+
+    <span class="hljs-comment"># Show metrics for a given node</span>
+    kubectl top node NODE_NAME
+
+    <span class="hljs-comment"># Show metrics for all pods in the default namespace</span>
+    kubectl top pod
+
+    <span class="hljs-comment"># Show metrics for all pods in the given namespace</span>
+    kubectl top pod --namespace=NAMESPACE
+
+    <span class="hljs-comment"># Show metrics for a given pod and its containers</span>
+    kubectl top pod POD_NAME --containers
+
+    <span class="hljs-comment"># Show metrics for the pods defined by label name=myLabel</span>
+    kubectl top pod <span class="hljs-_">-l</span> name=myLabel</code></pre><h2 id="useful-troubleshooting-and-debugging-commands"><a class="header-link" href="#useful-troubleshooting-and-debugging-commands"></a>Useful troubleshooting and debugging commands</h2>
+    <h3 id="describe"><a class="header-link" href="#describe"></a>Describe</h3>
+    <p>Show details of a specific resource or group of resources.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Describe a node</span>
+    kubectl describe nodes kubernetes-node-emt8.c.myproject.internal
+
+    <span class="hljs-comment"># Describe a pod</span>
+    kubectl describe pods/&lt;pod-name&gt;
+
+    <span class="hljs-comment"># Describe a pod identified by type and name in "pod.json"</span>
+    kubectl describe <span class="hljs-_">-f</span> pod.json
+
+    <span class="hljs-comment"># Describe all pods</span>
+    kubectl describe pods
+
+    <span class="hljs-comment"># Describe pods by label name=myLabel</span>
+    kubectl describe po <span class="hljs-_">-l</span> name=myLabel
+
+    <span class="hljs-comment"># Describe all pods managed by the 'frontend' replication controller (rc-created pods</span>
+    <span class="hljs-comment"># get the name of the rc as a prefix in the pod the name).</span>
+    kubectl describe pods frontend</code></pre><h3 id="exec"><a class="header-link" href="#exec"></a>Exec</h3>
+    <p>Execute a command in a container.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Get output from running 'date' from pod 123456-7890, using the first container by default</span>
+    kubectl <span class="hljs-built_in">exec</span> 123456-7890 date
+
+    <span class="hljs-comment"># Get output from running 'date' in ruby-container from pod 123456-7890</span>
+    kubectl <span class="hljs-built_in">exec</span> 123456-7890 -c ruby-container date
+
+    <span class="hljs-comment"># Switch to raw terminal mode, sends stdin to 'bash' in ruby-container from pod 123456-7890</span>
+    <span class="hljs-comment"># and sends stdout/stderr from 'bash' back to the client</span>
+    kubectl <span class="hljs-built_in">exec</span> 123456-7890 -c ruby-container -i -t -- bash -il
+
+    <span class="hljs-comment"># List contents of /usr from the first container of pod 123456-7890 and sort by modification time.</span>
+    <span class="hljs-comment"># If the command you want to execute in the pod has any flags in common (e.g. -i),</span>
+    <span class="hljs-comment"># you must use two dashes (--) to separate your command's flags/arguments.</span>
+    <span class="hljs-comment"># Also note, do not surround your command and its flags/arguments with quotes</span>
+    <span class="hljs-comment"># unless that is how you would execute it normally (i.e., do ls -t /usr, not "ls -t /usr").</span>
+    kubectl <span class="hljs-built_in">exec</span> 123456-7890 -i -t -- ls -t /usr</code></pre><h3 id="logs"><a class="header-link" href="#logs"></a>Logs</h3>
+    <p>Print the logs for a container in a pod or specified resource. If the pod has only one container, the container name is optional.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Return snapshot logs from pod nginx with only one container</span>
+    kubectl logs nginx
+
+    <span class="hljs-comment"># Return snapshot logs for the pods defined by label app=nginx</span>
+    kubectl logs -lapp=nginx
+
+    <span class="hljs-comment"># Return snapshot of previous terminated ruby container logs from pod web-1</span>
+    kubectl logs -p -c ruby web-1
+
+    <span class="hljs-comment"># Begin streaming the logs of the ruby container in pod web-1</span>
+    kubectl logs <span class="hljs-_">-f</span> -c ruby web-1
+
+    <span class="hljs-comment"># Display only the most recent 20 lines of output in pod nginx</span>
+    kubectl logs --tail=20 nginx
+
+    <span class="hljs-comment"># Show all logs from pod nginx written in the last hour</span>
+    kubectl logs --since=1h nginx
+
+    <span class="hljs-comment"># Return snapshot logs from first container of a job named hello</span>
+    kubectl logs job/hello
+
+    <span class="hljs-comment"># Return snapshot logs from container nginx-1 of a deployment named nginx</span>
+    kubectl logs deployment/nginx -c nginx-1</code></pre><h2 id="proxy"><a class="header-link" href="#proxy"></a>Proxy</h2>
+    <p>Creates a proxy server or application-level gateway between localhost and the Kubernetes API Server. It also allows
+    serving static content over specified HTTP path. All incoming data enters through one port and gets forwarded to the
+    remote kubernetes API Server port, except for the path matching the static content path.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># To proxy all of the kubernetes api and nothing else, use:</span>
+    $ kubectl proxy --api-prefix=/
+
+    <span class="hljs-comment"># To proxy only part of the kubernetes api and also some static files:</span>
+    $ kubectl proxy --www=/my/files --www-prefix=/static/ --api-prefix=/api/
+    <span class="hljs-comment"># The above lets you 'curl localhost:8001/api/v1/pods'.</span>
+
+    <span class="hljs-comment"># To proxy the entire kubernetes api at a different root, use:</span>
+    $ kubectl proxy --api-prefix=/custom/
+    <span class="hljs-comment"># The above lets you 'curl localhost:8001/custom/api/v1/pods'</span>
+
+    <span class="hljs-comment"># Run a proxy to kubernetes apiserver on port 8011, serving static content from ./local/www/</span>
+    kubectl proxy --port=8011 --www=./<span class="hljs-built_in">local</span>/www/
+
+    <span class="hljs-comment"># Run a proxy to kubernetes apiserver on an arbitrary local port.</span>
+    <span class="hljs-comment"># The chosen port for the server will be output to stdout.</span>
+    kubectl proxy --port=0</code></pre><h2 id="useful-advanced-commands"><a class="header-link" href="#useful-advanced-commands"></a>Useful advanced commands</h2>
+    <h3 id="apply"><a class="header-link" href="#apply"></a>Apply</h3>
+    <p>Apply a configuration to a resource by filename or stdin. The resource name must be specified. This resource will be
+    created if it doesn&#39;t exist yet. To use &#39;apply&#39;, always create the resource initially with either &#39;apply&#39; or &#39;create
+    --save-config&#39;.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Apply the configuration in pod.json to a pod.</span>
+    kubectl apply <span class="hljs-_">-f</span> ./pod.json
+
+    <span class="hljs-comment"># Apply the JSON passed into stdin to a pod.</span>
+    cat pod.json | kubectl apply <span class="hljs-_">-f</span> -
+
+    <span class="hljs-comment"># Note: --prune is still in Alpha</span>
+    <span class="hljs-comment"># Apply the configuration in manifest.yaml that matches label app=nginx and delete all the other resources that are not in the file and match label app=nginx.</span>
+    kubectl apply --prune <span class="hljs-_">-f</span> manifest.yaml <span class="hljs-_">-l</span> app=nginx
+
+    <span class="hljs-comment"># Apply the configuration in manifest.yaml and delete all the other configmaps that are not in the file.</span>
+    kubectl apply --prune <span class="hljs-_">-f</span> manifest.yaml --all --prune-whitelist=core/v1/ConfigMap</code></pre><h2 id="useful-settings-commands"><a class="header-link" href="#useful-settings-commands"></a>Useful settings commands</h2>
+    <h3 id="label"><a class="header-link" href="#label"></a>label</h3>
+    <p>Update the labels on a resource.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Update pod 'foo' with the label 'unhealthy' and the value 'true'.</span>
+    kubectl label pods foo unhealthy=<span class="hljs-literal">true</span>
+
+    <span class="hljs-comment"># Update pod 'foo' with the label 'status' and the value 'unhealthy', overwriting any existing value.</span>
+    kubectl label --overwrite pods foo status=unhealthy
+
+    <span class="hljs-comment"># Update all pods in the namespace</span>
+    kubectl label pods --all status=unhealthy
+
+    <span class="hljs-comment"># Update a pod identified by the type and name in "pod.json"</span>
+    kubectl label <span class="hljs-_">-f</span> pod.json status=unhealthy
+
+    <span class="hljs-comment"># Update pod 'foo' only if the resource is unchanged from version 1.</span>
+    kubectl label pods foo status=unhealthy --resource-version=1
+
+    <span class="hljs-comment"># Update pod 'foo' by removing a label named 'bar' if it exists.</span>
+    <span class="hljs-comment"># Does not require the --overwrite flag.</span>
+    kubectl label pods foo bar-</code></pre><h2 id="useful-other-commands"><a class="header-link" href="#useful-other-commands"></a>Useful other commands</h2>
+    <h3 id="config"><a class="header-link" href="#config"></a>Config</h3>
+    <p>Modify kubeconfig files using subcommands like &quot;kubectl config set current-context my-context&quot;.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Display the current-context</span>
+    kubectl config current-context
+
+    <span class="hljs-comment"># Delete the minikube cluster</span>
+    kubectl config delete-cluster minikube
+
+    <span class="hljs-comment"># Delete the context for the minikube cluster</span>
+    kubectl config delete-context minikube
+
+    <span class="hljs-comment"># List the clusters kubectl knows about</span>
+    kubectl config get-clusters
+
+    <span class="hljs-comment"># List the context kubectl knows about</span>
+    kubectl config get-contexts
+
+    <span class="hljs-comment"># Rename the context 'old-name' to 'new-name' in your kubeconfig file</span>
+    kubectl config rename-context old-name new-name
+
+    <span class="hljs-comment"># Set only the server field on the e2e cluster entry without touching other values.</span>
+    kubectl config <span class="hljs-built_in">set</span>-cluster e2e --server=https://1.2.3.4
+
+    <span class="hljs-comment"># Embed certificate authority data for the e2e cluster entry</span>
+    kubectl config <span class="hljs-built_in">set</span>-cluster e2e --certificate-authority=~/.kube/e2e/kubernetes.ca.crt
+
+    <span class="hljs-comment"># Disable cert checking for the dev cluster entry</span>
+    kubectl config <span class="hljs-built_in">set</span>-cluster e2e --insecure-skip-tls-verify=<span class="hljs-literal">true</span>
+
+    <span class="hljs-comment"># Set the user field on the gce context entry without touching other values</span>
+    kubectl config <span class="hljs-built_in">set</span>-context gce --user=cluster-admin
+
+    <span class="hljs-comment"># Use the context for the minikube cluster</span>
+    kubectl config use-context minikube</code></pre><h3 id="version"><a class="header-link" href="#version"></a>Version</h3>
+    <p>Print the client and server version information for the current context.</p>
+    <pre class="hljs"><code><span class="hljs-comment"># Print the client and server versions for the current context</span>
+    kubectl version</code></pre><h1 id="external-documentation"><a class="header-link" href="#external-documentation"></a>External documentation</h1>
+    <p>To go further in the management of Kubectl, please refer to these documentations :</p>
+    <ul class="list">
+    <li>Official Kubernetes <a href="https://kubernetes.io/docs/reference/kubectl/overview/">overview of Kubectl</a> command line</li>
+    <li>Official Kubernetes documentation to <a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/">install Kubectl</a> command line</li>
+    <li><p>Official <a href="https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands">Kubectl commands</a> details</p>
+    <h2 id="contributors"><a class="header-link" href="#contributors"></a>Contributors</h2>
+    </li>
+    <li><p><a href="https://www.linkedin.com/in/balasundaram-natarajan-43471115">Bala</a> - <a href="mailto:balasundarammaster@gmail.com">balasundarammaster@gmail.com</a></p>
+    </li>
+    <li><a href="https://github.com/wikitops">Wikitops</a> - <a href="mailto:wikitops5692@gmail.com">wikitops5692@gmail.com</a></li>
+    <li><a href="https://www.linkedin.com/in/vinayakavladwa/">Vinayak Ladwa</a> - <a href="mailto:vinayakladwa@gmail.com">vinayakladwa@gmail.com</a></li>
+    </ul>
+        </article>
+      </body>
+    </html>
+  pilcrow.css: |
+    /* needed because the container has overflow: hidden, but the pilcrows overflow */
+    .markdown-body {
+      padding-left: 30px;
+    }
+
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4,
+    .markdown-body h5,
+    .markdown-body h6 {
+      position: relative;
+    }
+
+    .markdown-body h1:hover .header-link:before,
+    .markdown-body h2:hover .header-link:before,
+    .markdown-body h3:hover .header-link:before,
+    .markdown-body h4:hover .header-link:before,
+    .markdown-body h5:hover .header-link:before,
+    .markdown-body h6:hover .header-link:before {
+        content: "\00B6";/* pilcrow */
+        color: #888;
+        font-size: smaller;
+    }
+
+    .markdown-body .header-link {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      position: absolute;
+      top: 0;
+      left: -0.7em;
+      display: block;
+      padding-right: 1em;
+    }
+
+    .markdown-body h1:hover .header-link,
+    .markdown-body h2:hover .header-link,
+    .markdown-body h3:hover .header-link,
+    .markdown-body h4:hover .header-link,
+    .markdown-body h5:hover .header-link,
+    .markdown-body h6:hover .header-link {
+      display: inline-block;
+      text-decoration: none;
+    }
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: workshop-configmap-files

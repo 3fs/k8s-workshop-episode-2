@@ -1,0 +1,23 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: workshop-example
+  labels:
+    name: workshop-app-example
+    instance: workshop-example
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  tls:
+    - hosts:
+        - "$CODE.k8s.3fs.si"
+      secretName: k8s.3fs.si-certificate
+  rules:
+    - host: "$CODE.k8s.3fs.si"
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: workshop-example
+              servicePort: 80
