@@ -3,15 +3,24 @@
 Helm is a tool that streamlines installing and managing Kubernetes applications.
 Think of it like apt/yum/homebrew for Kubernetes.
 
-- Helm manages releases (installations) of your charts - templates of kubernetes objects.
-- Helm runs on your laptop, CI/CD, or wherever you want it to run.
-- Charts are Helm packages that contain at least two things:
-  - A description of the package (`Chart.yaml`)
-  - One or more templates, which contain Kubernetes manifest files
-- Charts can be stored on disk, or fetched from remote chart repositories
-  (same as Debian or RedHat packages)
-
 This guide covers how you can quickly get started using Helm.
+
+## Introduction
+
+![03_helm](../images/03_helm.png)
+
+1. Helm runs on your laptop, CI/CD, or wherever you want it to run. Helm manages
+   releases (installations) of your charts - templates of kubernetes objects.
+2. Charts are Helm packages that contain at least two things:
+    * A description of the package (`Chart.yaml`).
+    * One or more templates, which contain Kubernetes manifest files.
+    * Charts can be stored on disk, or fetched from remote chart repositories
+    (same as Debian or RedHat packages).
+3. Helm client connects to Kubernetes API to deploy, upgrade or delete a release.
+4. Release information is stored in Kubernetes secret store.
+5. Kubernetes creates objects templated in a Helm chart and schedules pods on
+   worker nodes.
+6. Worker nodes pull container images for pods from container registry.
 
 ## Prerequisites
 
