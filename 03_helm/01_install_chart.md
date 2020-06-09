@@ -2,7 +2,7 @@
 
 ## Task objective
 
-In this task, we will install `workshop-example` chart. We will use helm to deploy it and expose it
+In this task, we will install pre-created `workshop-example` chart. We will use helm to deploy it and expose it
 to the Internet using Ingress kubernetes object.
 
 `workshop-example` chart files are available [here](./workshop-example/).

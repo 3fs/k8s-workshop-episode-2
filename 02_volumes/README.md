@@ -322,6 +322,8 @@ Deploy updated `StatefulSet` to cluster
 kubectl replace --force -f statefulset.yaml
 ```
 
+You can check the whole `statefulset.yaml` file [here](./solutions/03_statefulset.yaml).
+
 </details>
 
 ### 4. Remove all created objects

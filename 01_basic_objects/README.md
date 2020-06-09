@@ -71,8 +71,7 @@ kubectl replace --force -f statefulset.yaml
 
 ### 1. Add annotations and labels to pod definitions
 
-Start application building by editng StatefulSet. Current `Pod` definition in
-`statefulset.yaml` lacks definition of `annotations`.
+Current `Pod` definition in `statefulset.yaml` lacks definition of `annotations`.
 
 1. Add the following annotations to `Pod` definition (yaml: `.spec.template.metadata.annotations`):
     * `workshop-name: k8s-workshop-episode-2`
@@ -100,7 +99,7 @@ kubectl logs pod/workshop-example-0
 
 Select deployed objects filtering using your label.
 
-```
+```sh
 kubectl get all -l code=$CODE
 ```
 
@@ -129,6 +128,7 @@ Update file `statefulset.yaml`. (change `cranky-hippo` to your workshop `$CODE`)
 ```
 
 Deploy to cluster:
+
 ```sh
 kubectl replace --force -f statefulset.yaml
 ```
@@ -139,7 +139,7 @@ You can check the full solution [here](./solutions/01_statefulset.yaml).
 
 ### 2. Add environment variables
 
-The application is using environment variables for configuration. The environment variable `CODE` is used to in response at `/hello`. You can check that response by visiting `https://$CODE.k8s.3fs.si/hello`.
+The application is using environment variables for configuration. The environment variable `CODE` is displayed on HTTP endpoint `/hello`. You can check that response by visiting `https://$CODE.k8s.3fs.si/hello`.
 
 Add the environment variables:
 
@@ -161,7 +161,7 @@ kubectl describe statefulset/workshop-example
 kubectl describe pod/workshop-example-0
 ```
 
-Check pods environment by executing and running `env` command.
+Check pods environment by entering the running pod using `kubectl exec` command and running `env` command.
 
 ```sh
 kubectl exec pod/workshop-example-0 env
@@ -192,6 +192,7 @@ Update file `statefulset.yaml` (change `cranky-hippo` to your workshop `$CODE`).
 ```
 
 Deploy to cluster:
+
 ```sh
 kubectl replace --force -f statefulset.yaml
 ```
@@ -262,6 +263,7 @@ Update file `statefulset.yaml`
 ```
 
 Deploy to cluster:
+
 ```sh
 kubectl replace --force -f statefulset.yaml
 ```
@@ -324,6 +326,7 @@ Update file `statefulset.yaml`
 ```
 
 Deploy to cluster:
+
 ```sh
 kubectl replace --force -f statefulset.yaml
 ```
@@ -371,7 +374,7 @@ kubectl create -f /k8s.3fs.si-cert.yaml
 After successful import of certificate Secret object, we can create Ingress
 object to expose service to Internet.
 
-To expose the service to the Internet edit hostnames in
+To expose the service to the Internet edit hostname in
 `ingress.yaml` to include `$CODE` (e.g.
 `cranky-hippo.k8s.3fs.si`). To edit file you can use included `vim` or `nano`
 editors (quick guide how to use them is
@@ -402,7 +405,7 @@ kubectl apply -f ingress.yaml
 
 Inspect the ingress object.
 
-```
+```sh
 kubectl describe ingress workshop-example
 ```
 
@@ -411,22 +414,25 @@ kubectl describe ingress workshop-example
 Your workshop application has now been deployed. Replace `$CODE` with your workshop code.
 
 Access:
-- Space invaders: `https://$CODE.k8s.3fs.si`.
-- Hello: `https://$CODE.k8s.3fs.si/hello`.
+
+* Space invaders: `https://$CODE.k8s.3fs.si`.
+* Hello: `https://$CODE.k8s.3fs.si/hello`.
 
 Kubernetes dashboard:
-- All deployed resources: https://dashboard.k8s.3fs.si/#/overview?namespace=$CODE
-- Pod information: https://dashboard.k8s.3fs.si/#/pod/$CODE/workshop-example-0?namespace=$CODE
-- Logs: https://dashboard.k8s.3fs.si/#/log/$CODE/workshop-example-0/pod?namespace=$CODE
+
+* All deployed resources: https://dashboard.k8s.3fs.si/#/overview?namespace=$CODE
+* Pod information: https://dashboard.k8s.3fs.si/#/pod/$CODE/workshop-example-0?namespace=$CODE
+* Logs: https://dashboard.k8s.3fs.si/#/log/$CODE/workshop-example-0/pod?namespace=$CODE
 
 Things to check:
-- Pod CPU and Memory Resource consumption
-- Pod Metadata
-- Pod container environment variables
-- Pod Events (*hint: pod liveness probe will fail after 10min.*)
-- Pod Logs
-- Service definition
-- Ingress definition
-- Secret used for HTTPS
+
+* Pod CPU and Memory Resource consumption
+* Pod Metadata
+* Pod container environment variables
+* Pod Events (*hint: pod liveness probe will fail after 10min.*)
+* Pod Logs
+* Service definition
+* Ingress definition
+* Secret used for HTTPS
 
 ## Next: [Volumes](../02_volumes/README.md)
