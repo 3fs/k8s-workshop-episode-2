@@ -166,7 +166,7 @@ file into a container, which will be used for authentication to *Space Invaders*
 Tasks:
 
 * Create a `Secret` object with key `password` with a value of random password
-  * use `kubectl create secret generic my-secret --from-literal=key1=supersecret` command with appropriate arguments
+  * use `kubectl create secret generic workshop-example-secret --from-literal=password=supersecret` command with appropriate arguments
 * Update `StatefulSet` in `statefulset.yaml` to mount the previously created `Secret`, key `password` to `/opt/` directory.
   * add the `Secret` reference to `.spec.template.spec.volumes` section
   * add the reference to volume in `.spec.template.containers[0].volumemounts` section
