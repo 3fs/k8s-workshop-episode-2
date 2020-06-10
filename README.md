@@ -36,4 +36,6 @@ Here you can find some additional information about the workshop:
 
 ## Credits
 
-> TODO
+#### 3fs Infrastructure team
+
+[![3fs](https://avatars1.githubusercontent.com/u/4487831?s=65&v=4)](https://3fs.si)
