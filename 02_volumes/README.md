@@ -93,7 +93,7 @@ Tasks:
 * Create a `ConfigMap` object with files located in `files/` sub-directory
   * use `kubectl create configmap workshop-configmap-files` command with appropriate arguments.
 * Update `StatefulSet` in `statefulset.yaml` to mount the previously created `ConfigMap` in the `/tmp` directory:
-  * add the `ConfigMap` reference to `.spec.template.volumes` section
+  * add the `ConfigMap` reference to `.spec.template.spec.volumes` section
   * add the reference to volume in `.spec.template.containers[0].volumeMounts` section
 
 After you have updated the `statefulset.yaml`, deploy the application with the following command.
@@ -125,7 +125,7 @@ configmap/workshop-configmap-files created
 
 You can check the full `ConfigMap` file [here](./solutions/configmap.yaml).
 
-Update `statefulset.yaml` with appropriate references in `.spec.template.volumes` and `.spec.template.containers[0].volumeMounts` sections.
+Update `statefulset.yaml` with appropriate references in `.spec.template.spec.volumes` and `.spec.template.containers[0].volumeMounts` sections.
 
 ```diff
 --- statefulset.yaml	2020-05-26 16:09:18.000000000 +0200
@@ -168,7 +168,7 @@ Tasks:
 * Create a `Secret` object with key `password` with a value of random password
   * use `kubectl create secret generic my-secret --from-literal=key1=supersecret` command with appropriate arguments
 * Update `StatefulSet` in `statefulset.yaml` to mount the previously created `Secret`, key `password` to `/opt/` directory.
-  * add the `Secret` reference to `.spec.template.volumes` section
+  * add the `Secret` reference to `.spec.template.spec.volumes` section
   * add the reference to volume in `.spec.template.containers[0].volumemounts` section
 
 After you have updated the `statefulset.yaml`, deploy the application with the following command.
@@ -200,7 +200,7 @@ secret/workshop-example-secret created
 
 You can check the full `Secret` file [here](./solutions/secret.yaml).
 
-Update `statefulset.yaml` with appropriate references in `.spec.template.volumes` and `.spec.template.containers[0].volumeMounts` sections.
+Update `statefulset.yaml` with appropriate references in `.spec.template.spec.volumes` and `.spec.template.containers[0].volumeMounts` sections.
 
 ```diff
 --- 01_statefulset.yaml	2020-05-27 12:00:02.000000000 +0200
