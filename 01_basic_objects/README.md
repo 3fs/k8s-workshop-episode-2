@@ -36,8 +36,6 @@ We have prepared a workshop application container with the following features:
     * Between `10m` and `100m` CPU.
     * Between `32M` and `128M` Memory.
 
-The source code for the application is available [here](../06_setup/code/main.go).
-
 ## Task overview
 
 Current directory contains three kubernetes objects that are stripped to bare working minimum.
